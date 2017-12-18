@@ -7,6 +7,8 @@ import { setContext } from 'apollo-link-context'
 import { createHttpLink } from 'apollo-link-http'
 import { Text, View } from 'react-native'
 
+import Root from './src/components/Root'
+
 const TOKEN = '2cd92775eb3e72a098665227aba01dedfd882409'
 
 const httpLink = new createHttpLink({ uri: 'https://api.github.com/graphql' })
@@ -28,9 +30,7 @@ const client = new ApolloClient({
 const App = () => {
   return (
     <ApolloProvider client={ client }>
-      <View>
-        <Text> GitHub Repos </Text>
-      </View>
+      <Root />
     </ApolloProvider>
   )
 }
