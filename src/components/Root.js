@@ -2,6 +2,8 @@ import React from 'react'
 import { View, Text } from 'react-native'
 import styled from 'styled-components/native';
 
+import ReposSearch from './ReposSearch'
+
 const Container = styled.View`
   display: flex;
   flex-direction: column;
@@ -20,6 +22,8 @@ const Root = () => {
   return (
     <Container>
       <Title> GitHub Repos </Title>
+
+      <ReposSearch />
     </Container>
   )
 }
