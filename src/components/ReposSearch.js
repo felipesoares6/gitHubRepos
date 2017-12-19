@@ -7,18 +7,20 @@ import Repositories from '../containers/Repositories'
 
 const username = withState('username', 'handleUserName', '')
 
-const ReposSearch = ({ username, handleUserName }) => {
-  return (
-    <View>
-      <Form handleUserName={ handleUserName } />
-      <Repositories username={ username } />
-    </View>
-  )
-}
+const ReposSearchPure = ({ username, handleUserName }) => (
+  <View>
+    <Form handleUserName={ handleUserName } />
 
-const ReposSearchPure = compose(
+    {
+      !!username &&
+      <Repositories username={ username } />
+    }
+  </View>
+)
+
+const ReposSearch = compose(
   username,
   pure
-)(ReposSearch)
+)(ReposSearchPure)
 
-export default ReposSearchPure
+export default ReposSearch
