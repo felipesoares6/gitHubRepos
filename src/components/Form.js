@@ -1,25 +1,32 @@
 import React from 'react'
-import { View, TextInput, Button } from 'react-native'
+import { View } from 'react-native'
 import { withState, pure, compose } from 'recompose'
+import styled from 'styled-components/native'
+
+import Input from './Input'
+import Button from './Button'
+
+const SearchForm = styled.View`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+`
 
 const username = withState('username', 'setUsername', '')
 
 const Form = ({ username, setUsername, handleUserName }) => (
-  <View>
-    <TextInput
-      placeholder='Type the username here!'
-      onChangeText={ setUsername }
-      value={ username }
-      placeholderTextColor='#fff'
+  <SearchForm>
+    <Input
+      setUsername={ setUsername }
+      username={ username }
     />
 
-    <Button
-      onPress={ () => handleUserName(username) }
-      title='SEARCH'
-      color='#841584'
-      accessibilityLabel='Click on this button to search the repos.'
-    />
-  </View>
+    <Button handleUserName={ () => handleUserName(username) } />
+  </SearchForm>
 )
 
 const FormPure = compose(
