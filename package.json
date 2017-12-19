@@ -27,6 +27,7 @@
     "react": "16.0.0",
     "react-apollo": "^2.0.4",
     "react-native": "0.50.3",
+    "recompose": "^0.26.0",
     "styled-components": "^2.3.0"
   }
 }
