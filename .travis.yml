@@ -1,0 +1,16 @@
+language: node_js
+
+node_js:
+  # LTS version
+  - "8.0"
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
+
+install:
+  - yarn
+
+before_script:
+  - export CI=false
