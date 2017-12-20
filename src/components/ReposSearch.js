@@ -8,11 +8,12 @@ import Repositories from '../containers/Repositories'
 
 const SearchWrapper = styled.View`
   max-width: 90%;
+  max-height: 75%;
 `
 
 const username = withState('username', 'handleUserName', '')
 
-const ReposSearchPure = ({ username, handleUserName }) => (
+export const ReposSearchPure = ({ username, handleUserName }) => (
   <SearchWrapper>
     <Form handleUserName={ handleUserName } />
 

@@ -16,6 +16,7 @@ const ButtonText = styled.Text`
 
 const Button = ({ handleUserName }) => (
   <SubmitButton
+    data-submit-button
     onPress={ handleUserName }
     accessibilityLabel='Click on this button to search the repos.'
   >
