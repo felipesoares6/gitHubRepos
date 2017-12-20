@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text } from 'react-native'
-import styled from 'styled-components/native';
+import styled from 'styled-components/native'
 
 import ReposSearch from './ReposSearch'
 
@@ -11,23 +11,20 @@ const Container = styled.View`
   justify-content: flex-start;
   background-color: ${ props => props.theme.primaryLightColor };
   height: 100%;
-  padding-top: 100px;
 `
 
 const Title = styled.Text`
+  margin-top: 100px;
   font-size: 32px;
   color: ${ props => props.theme.secondaryColor };
-  margin-bottom: 50px;
 `
 
-const Root = () => {
-  return (
-    <Container>
-      <Title> GitHub Repos </Title>
+const Root = () => (
+  <Container>
+    <Title> GitHub Repos </Title>
 
-      <ReposSearch />
-    </Container>
-  )
-}
+    <ReposSearch />
+  </Container>
+)
 
 export default Root

@@ -10,15 +10,16 @@ const FormInput = styled.TextInput`
   border-radius: 5px;
   padding: 10px;
   font-weight: bold;
+  margin-right: 10px;
 `
 
 const Input = ({ username, setUsername }) => (
-    <FormInput
-      placeholder='Type the username here!'
-      onChangeText={ setUsername }
-      value={ username }
-      placeholderTextColor='#fff'
-    />
+  <FormInput
+    placeholder='Type the username here!'
+    onChangeText={ setUsername }
+    value={ username }
+    placeholderTextColor='#fff'
+  />
 )
 
 export default Input

@@ -4,7 +4,7 @@ import styled from 'styled-components/native'
 
 const SubmitButton = styled.TouchableOpacity`
   border-width: 2px;
-  border-color: ${props => props.theme.primaryColor};
+  border-color: ${ props => props.theme.primaryColor };
   border-radius: 5px;
   padding: 10px 30px;
 `
