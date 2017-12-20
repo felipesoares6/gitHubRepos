@@ -1,21 +1,26 @@
 import React from 'react'
 import { View } from 'react-native'
 import { withState, pure, compose } from 'recompose'
+import styled from 'styled-components/native'
 
 import Form from './Form'
 import Repositories from '../containers/Repositories'
 
+const SearchWrapper = styled.View`
+  max-width: 90%;
+`
+
 const username = withState('username', 'handleUserName', '')
 
 const ReposSearchPure = ({ username, handleUserName }) => (
-  <View>
+  <SearchWrapper>
     <Form handleUserName={ handleUserName } />
 
     {
       !!username &&
       <Repositories username={ username } />
     }
-  </View>
+  </SearchWrapper>
 )
 
 const ReposSearch = compose(

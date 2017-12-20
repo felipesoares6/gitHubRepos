@@ -1,7 +1,7 @@
 import React from 'react'
-import { FlatList } from 'react-native'
+import { View, FlatList } from 'react-native'
 
-import Repository from '../components/Repository'
+import Repository from './Repository'
 
 const keyExtractor = (item) => item.id
 
@@ -13,11 +13,13 @@ const renderItems = ({ item }) => (
 )
 
 const List = ({ data }) => (
-  <FlatList
-    data={data.user.repositories.nodes}
-    keyExtractor={keyExtractor}
-    renderItem={renderItems}
-  />
+  <View>
+    <FlatList
+      data={ data.user.repositories.nodes }
+      keyExtractor={ keyExtractor }
+      renderItem={ renderItems }
+    />
+  </View>
 )
 
 export default List

@@ -9,11 +9,10 @@ import Button from './Button'
 const SearchForm = styled.View`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  width: 90%;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 `
 
 const username = withState('username', 'setUsername', '')
