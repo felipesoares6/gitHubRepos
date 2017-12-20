@@ -5,7 +5,7 @@ import Repository from './Repository'
 
 const keyExtractor = (item) => item.id
 
-const renderItems = ({ item }) => (
+const renderItem = ({ item }) => (
   <Repository
     key={ `${item.id}` }
     repository={ item }
@@ -13,13 +13,11 @@ const renderItems = ({ item }) => (
 )
 
 const List = ({ data }) => (
-  <View>
-    <FlatList
-      data={ data.user.repositories.nodes }
-      keyExtractor={ keyExtractor }
-      renderItem={ renderItems }
-    />
-  </View>
+  <FlatList
+    data={ data.user.repositories.nodes }
+    keyExtractor={ keyExtractor }
+    renderItem={ renderItem }
+  />
 )
 
 export default List
