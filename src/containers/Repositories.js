@@ -1,5 +1,4 @@
 import React from 'react'
-import { FlatList } from 'react-native'
 import { pure, compose } from 'recompose'
 import gql from 'graphql-tag'
 import { graphql } from 'react-apollo'
@@ -7,24 +6,7 @@ import { graphql } from 'react-apollo'
 import displayLoading from '../components/Loading'
 import displayError from '../components/Error'
 
-import Repository from '../components/Repository'
-
-const keyExtractor = (item) => item.id
-
-const renderItems = ({ item }) => (
-  <Repository
-    key={ `${item.id}` }
-    repository={ item }
-  />
-)
-
-const RepositoriesPure = ({ data }) => (
-  <FlatList
-    data={data.user.repositories.nodes}
-    keyExtractor={keyExtractor}
-    renderItem={renderItems}
-  />
-)
+import List from '../components/List'
 
 const data = graphql(gql`
   query repositoriesSearch($username: String!){
@@ -44,12 +26,11 @@ const data = graphql(gql`
   })
 })
 
-
 const Repositories = compose(
   data,
   displayLoading,
   displayError,
   pure
-)(RepositoriesPure)
+)(List)
 
 export default Repositories
