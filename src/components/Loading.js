@@ -1,9 +1,9 @@
 import React from 'react'
-import { Text } from 'react-native'
+import { ActivityIndicator } from 'react-native'
 import { pure, compose, branch, renderComponent } from 'recompose'
 
 const Loading = () => (
-  <Text> loading... </Text>
+   <ActivityIndicator size='large' color='#fff' />
 )
 
 const displayLoading = branch(
