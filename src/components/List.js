@@ -1,5 +1,8 @@
 import React from 'react'
-import { View, FlatList } from 'react-native'
+import { Text, View, FlatList } from 'react-native'
+import { pure, compose } from 'recompose'
+
+import displayEmpty from './Empty'
 
 import Repository from './Repository'
 
@@ -12,12 +15,18 @@ const renderItem = ({ item }) => (
   />
 )
 
-const List = ({ data }) => (
+
+const PureList = ({ data }) => (
   <FlatList
     data={ data.user.repositories.nodes }
     keyExtractor={ keyExtractor }
     renderItem={ renderItem }
   />
 )
+
+const List = compose(
+  displayEmpty,
+  pure
+)(PureList)
 
 export default List
