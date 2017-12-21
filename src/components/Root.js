@@ -10,7 +10,7 @@ const Container = styled.View`
   align-items: center;
   justify-content: flex-start;
   background-color: ${ props => props.theme.primaryLightColor };
-  height: 100%;
+  min-height: 100%;
 `
 
 const Title = styled.Text`

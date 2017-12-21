@@ -2,6 +2,8 @@ import React from 'react'
 import { View, Text } from 'react-native'
 import styled from 'styled-components/native'
 
+import Star from './Star'
+
 const Card = styled.View`
   border-width: 2px;
   border-radius: 5px;
@@ -26,18 +28,18 @@ const Description = styled.Text`
   max-width: 90%;
 `
 
-const Repository = ({ repository }) => {
-  return (
-    <Card>
-      <Title data-title>
-        { repository.nameWithOwner }
-      </Title>
+const Repository = ({ repository }) => (
+  <Card>
+    <Star repository={ repository } />
 
-      <Description data-description>
-        { repository.description || 'No description provided' }
-      </Description>
-    </Card>
-  )
-}
+    <Title data-title>
+      { repository.nameWithOwner }
+    </Title>
+
+    <Description data-description>
+      { repository.description || 'No description provided' }
+    </Description>
+  </Card>
+)
 
 export default Repository

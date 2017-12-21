@@ -1,30 +1,12 @@
 import React from 'react'
 import { pure, compose } from 'recompose'
-import gql from 'graphql-tag'
-import { graphql } from 'react-apollo'
 
 import displayLoading from '../components/Loading'
 import displayError from '../components/Error'
 
-import List from '../components/List'
+import data from '../data'
 
-const data = graphql(gql`
-  query repositoriesSearch($username: String!){
-    user(login: $username) {
-      repositories(last: 10) {
-        nodes {
-          id,
-          nameWithOwner,
-          description
-        }
-      }
-    }
-  }
-`, {
-  options: ({ username }) => ({
-    variables: { username: username, type: 'String' }
-  })
-})
+import List from '../components/List'
 
 const Repositories = compose(
   data,
