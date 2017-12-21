@@ -21,13 +21,13 @@ const StarImage = styled.Image`
   width: 16px;
 `
 
+const handleStarImage = (repository) => repository.stargazers.totalCount ? pinkStar : opacityStar
+
 const Star = ({ repository }) => (
-  <StarsCount data-star-count>
+  <StarsCount>
     { repository.stargazers.totalCount }
 
-    <StarImage
-      source={ repository.stargazers.totalCount > 0 ? pinkStar : opacityStar }
-    />
+    <StarImage source={ handleStarImage(repository) } />
   </StarsCount>
 )
 

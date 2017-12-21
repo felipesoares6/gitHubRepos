@@ -9,10 +9,7 @@ describe('<Repository />', () => {
     props = {
       repository: {
         nameWithOwner: 'felipesoares6/gitHubRepos',
-        description: 'react-native project',
-        stargazers: {
-          'totalCount': '1'
-        }
+        description: 'react-native project'
       }
     }
   })
