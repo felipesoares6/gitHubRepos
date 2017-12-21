@@ -17,10 +17,15 @@ yarn start -- --reset-cache
 
 ## Running the tests 👮
 
-### `yarn test`
+```
+yarn test
+```
 
 Watching the files
-### `yarn test:watch`
+
+```
+yarn test:watch
+```
 
 ### This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
